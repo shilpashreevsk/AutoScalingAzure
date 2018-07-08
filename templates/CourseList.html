@@ -1,0 +1,42 @@
+<html>
+	<head> <b>Cloud Quiz 6<b> </head>
+	<body>
+	<div class="container">
+	 <label><b><u> Shilpa Shree</u></b></label>&nbsp&nbsp&nbsp&nbsp&nbsp	<label><b><u>1001540443</u></b></label>	<br><br>
+	
+	<form id="courselist" action="/courseslist" enctype="multipart/form-data" method="post">
+	<input type = "hidden" name="sid" value={{ studentid }}>{{ studentid }}</input>
+	<p class='description'></p> Courses to Enroll:<br><input type = "text" name="coursename"><input type="submit" value="Submit" id="submit_file"><br>
+	</form>
+	<h1> <b>Courses List </b><h1>	
+	 <table border="2px">
+                <tr><td>Courses</td></tr>
+                {% for obj in res %}
+                    <tr><td>{{ obj.CourseNo }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+	<label>Single User</label>	
+	<form id="single" action="/singletab" enctype="multipart/form-data" method="post">
+	<p>Single Name </p><br><input type = "text" name="singlename">
+	<input type="submit" value="Submit" id="submit_file"><br>
+	</form>
+	
+	<label>Two Inputs</label>
+	<form id="double" action="/doubletab" enctype="multipart/form-data" method="post">
+	<p>doublename1 </p><br><input type = "text" name="doublename1">
+	<p>doublename2 </p><br><input type = "text" name="doublename2">
+	<input type="submit" value="Submit" id="submit_file"><br>
+	</form>
+
+	<label>Three Inputs</label>
+	<form id="triple" action="/tripletab" enctype="multipart/form-data" method="post">
+	<p>triplename1 </p><br><input type = "text" name="triplename1">
+	<p>triplename2 </p><br><input type = "text" name="triplename2">
+	<p>triplename3 </p><br><input type = "text" name="triplename3">
+	<input type="submit" value="Submit" id="submit_file"><br>
+	</form>
+
+	</body>
+</html>
